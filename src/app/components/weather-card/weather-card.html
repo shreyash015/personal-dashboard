@@ -1,0 +1,35 @@
+<div class="weather-widget relative text-white bg-linear-to-br from-purple-700/70 via-indigo-800/60 to-blue-900/70 backdrop-blur-lg shadow-2xl rounded-3xl p-6 overflow-hidden border border-white/10">
+        <div class="">
+            <div id="cloud-container" class="absolute top-0 right-0 w-36 h-36 sm:w-40 sm:h-40 z-30 cursor-pointer rounded-tr-3xl overflow-hidden">
+                <div id="cloud-tooltip" class="tooltip absolute top-20 right-2 sm:top-24 sm:right-4 bg-black/70 text-white px-3 py-1.5 rounded-md text-xs opacity-0 transition-opacity duration-300 pointer-events-none z-40 shadow-lg">
+                    Click clouds for a surprise!
+                    <div class="absolute -top-1 right-3 w-3 h-3 bg-black/70 transform rotate-45"></div>
+                </div>
+            </div>
+
+            <div class="relative z-20">
+                <div class="location text-xl opacity-90 mb-4 tracking-wide animate-fadeInUp delay-200" id="location">{{location()}}</div>
+
+                <div class="current-weather flex items-center mb-2">
+                    <div class="weather-icon-main text-5xl mr-3">⛅</div>
+                    <div class="temp text-5xl font-semibold">
+                        <span class="bg-clip-text text-transparent bg-linear-to-r from-white to-slate-300 animate-fadeInScaleUp delay-100" id="temperature">{{temp()}}°C</span>
+            
+                    </div>
+                </div>
+
+
+
+                <div class="humidity-wind flex-col justify-between text-sm opacity-90 mb-5 animate-fadeInUp delay-500">
+                  <div id="humidity">Feels Like: {{feelsLike()}}°C</div>
+                  <div class="flex mt-2 justify-between">
+                    <div id="humidity">High: {{high()}}°C</div>
+                    <div id="windSpeed">Low: {{low()}}°C</div>
+                  </div>
+                </div>
+                @if (isHot()) {
+                  <p class="text-lg text-center font-bold text-red-500 animate-pulse">It's hot outside!</p>
+                }
+            </div>
+        </div>
+</div>
