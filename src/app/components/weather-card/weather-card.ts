@@ -13,5 +13,5 @@ export class WeatherCard {
   high = signal(44);
   low = signal(28);
   feelsLike = signal(42);
-  isHot = computed(() => this.temp() > 32);
+  isHot = computed(() => this.temp() > 30);
 }
