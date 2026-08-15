@@ -1,0 +1,18 @@
+<div class="flex items-center rounded-md bg-gray-800 pl-3 outline-1 -outline-offset-1 outline-gray-600">
+  <div class="shrink-0 text-base text-gray-400 select-none sm:text-sm/6">{{ currencySymbol }}</div>
+  <input
+    [ngModel]="amount"
+    (ngModelChange)="onAmountInput($event)"
+    [readonly]="readonly"
+    type="text"
+    class="block min-w-0 grow bg-gray-800 py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
+  <select
+    [ngModel]="currencyCode"
+    (ngModelChange)="onCurrencyChange($event)"
+    class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-800 py-1.5 pr-7 pl-3 text-base text-gray-400">
+    <option>USD</option>
+    <option>INR</option>
+    <option>EUR</option>
+    <option>GBP</option>
+  </select>
+</div>
